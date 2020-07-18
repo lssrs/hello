@@ -558,7 +558,7 @@ async function handleApi() {
     const baks = getGlobalBaks()
     const bakobj = baks.find((b) => b.id === data.val)
     if (bakobj && bakobj.bak) {
-      const { chavy_boxjs_sessions, chavy_boxjs_sysCfgs, chavy_boxjs_userCfgs, chavy_boxjs_sysApps, datas } = bakobj.bak
+      const { chavy_boxjs_sessions, chavy_boxjs_sysCfgs, chavy_boxjs_userCfgs, chavy_boxjs_sysApps, ...datas } = bakobj.bak
       $.setdata(JSON.stringify(chavy_boxjs_sessions), $.KEY_sessions)
       $.setdata(JSON.stringify(chavy_boxjs_userCfgs), $.KEY_userCfgs)
       const isNull = (val) => [undefined, null, 'null', 'undefined', ''].includes(val)
